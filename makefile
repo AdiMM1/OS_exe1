@@ -6,7 +6,7 @@ LDFLAGS = -lm
 
 .PHONY: all clean
 
-all: q1/dividedByZero q1/outOfStack q1/undefinedMemory q2/poisson q3/libpoisson.so q5/q5 q6/add2PB q6/findPhone q4/demo
+all: q1/dividedByZero q1/outOfStack q1/undefinedMemory q2/poisson q3/libpoisson.so q5/q5 q6/add2PB q6/findPhone q4/q4
 
 q1/dividedByZero: q1/dividedByZero.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
@@ -50,11 +50,11 @@ q6/add2PB: q6/add2PB.c
 q6/findPhone: q6/findPhone.c
 	$(CC) -o $@ $<
 
-q4/demo: q4/gcob_q4.o
+q4/q4: q4/gcob_q4.o
 	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
 q4/gcob_q4.o: q4/gcob_q4.cpp 
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-	rm -f q1/dividedByZero q1/outOfStack q1/undefinedMemory q2/poisson q3/libpoisson.so q5/q5 q6/add2PB q6/findPhone q4/demo /.o
+	rm -f q1/dividedByZero q1/outOfStack q1/undefinedMemory q2/poisson q3/libpoisson.so q5/q5 q6/add2PB q6/findPhone q4/q4 /.o
